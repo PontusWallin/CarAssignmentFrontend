@@ -1,0 +1,14 @@
+form {
+  display: flex;
+  justify-content: center;
+}
+
+mat-list {
+  width: 100%;
+  max-width: 450px;
+  margin: 0 auto;
+}
+
+mat-list-item:hover {
+  background-color: #f5f5f5;
+}

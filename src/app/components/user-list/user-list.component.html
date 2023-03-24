@@ -1,0 +1,30 @@
+<mat-card>
+
+  <form>
+    <mat-form-field>
+      <input matInput placeholder="Search by name" ngModel name="userSearch" (input)="onSearchTextChange($event)">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-select placeholder="Sort by" ngModel name="userSort" (selectionChange)="onSortChange($event)">
+        <mat-option value="id_asc">ID (Ascending)</mat-option>
+        <mat-option value="id_des">ID (Descending)</mat-option>
+        <mat-option value="name_asc">Name (Ascending)</mat-option>
+        <mat-option value="name_des">Name (Descending)</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+
+  </form>
+
+  <mat-list *ngIf="allUsers.length>0">
+
+    <div *ngFor="let user of displayedUsers">
+      <mat-divider></mat-divider>
+      <mat-list-item>
+        <p>User {{user.id}} is {{user.name}}</p>
+      </mat-list-item>
+    </div>
+
+  </mat-list>
+</mat-card>
